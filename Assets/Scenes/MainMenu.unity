@@ -2586,7 +2586,7 @@ MonoBehaviour:
   resolutionSlider: {fileID: 920536849}
   volumeText: {fileID: 186473413}
   resolutionText: {fileID: 1252786936}
-  resolutionSize: {fileID: 0}
+  resolutionSize: {fileID: 993886319}
   resText: 
   volumeInt: 0
   resolutionIntWidth: 0
@@ -3794,7 +3794,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &2005807244
 MonoBehaviour:

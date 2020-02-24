@@ -51,4 +51,7 @@ public class SettingsManager : MonoBehaviour
     {
         Screen.SetResolution(resolutionIntWidth, resolutionIntHeight, FullScreenMode.ExclusiveFullScreen);
     }
+
+
+
 }

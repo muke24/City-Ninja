@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
+	public Button applyButton;
+
 	public Slider volumeSlider;
 	public Slider resolutionSlider;
 
@@ -22,11 +24,13 @@ public class SettingsManager : MonoBehaviour
 	public int resHeight;
 
 	public bool resChanged;
+	public bool settingsChanged;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		resChanged = false;
+		settingsChanged = false;
 		resWidth = Screen.width;
 		resHeight = Screen.height;
 	}
@@ -34,7 +38,15 @@ public class SettingsManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (settingsChanged == false)
+		{
+			applyButton.gameObject.SetActive(false);
+		}
 
+		if (settingsChanged == true)
+		{
+			applyButton.gameObject.SetActive(true);
+		}
 
 		resolutionIntWidth = Mathf.RoundToInt(resWidth * resolutionSlider.value);
 		resolutionIntHeight = Mathf.RoundToInt(resHeight * resolutionSlider.value);
@@ -60,12 +72,16 @@ public class SettingsManager : MonoBehaviour
 			Screen.SetResolution(resolutionIntWidth, resolutionIntHeight, FullScreenMode.ExclusiveFullScreen);
 			resChanged = false;
 		}
+		settingsChanged = false;
 		AudioListener.volume = volumeSlider.value;
 	}
 	public void ResolutionChanged()
 	{
 		resChanged = true;
 	}
-
+	public void SettingsHasChanged()
+	{
+		settingsChanged = true;
+	}
 
 }

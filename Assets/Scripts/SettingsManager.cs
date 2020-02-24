@@ -18,11 +18,14 @@ public class SettingsManager : MonoBehaviour
     public int resolutionIntWidth;
     public int resolutionIntHeight;
 
+    public int resWidth;
+    public int resHeight;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        resWidth = Screen.currentResolution.width;
+        resHeight = Screen.currentResolution.height;
     }
 
     // Update is called once per frame
@@ -30,8 +33,8 @@ public class SettingsManager : MonoBehaviour
     {
         
 
-        resolutionIntWidth = Mathf.RoundToInt(Screen.currentResolution.width * resolutionSlider.value);
-        resolutionIntHeight = Mathf.RoundToInt(Screen.currentResolution.height * resolutionSlider.value);
+        resolutionIntWidth = Mathf.RoundToInt(resWidth * resolutionSlider.value);
+        resolutionIntHeight = Mathf.RoundToInt(resHeight * resolutionSlider.value);
 
         resolutionText.text = resText;
         resText = resolutionSlider.value.ToString();

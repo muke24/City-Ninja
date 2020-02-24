@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d853f8a7df7ed4487b44d6107a8199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 8903508336682851701, guid: 646fb65bceb62c74abd25af43bdad67a,
+    type: 3}
+  particleEffect: {fileID: 8903508336682851691, guid: 646fb65bceb62c74abd25af43bdad67a,
+    type: 3}
   damage: 1
   speed: 5
 --- !u!61 &-8566110602246597461
@@ -107,7 +111,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

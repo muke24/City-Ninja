@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    public ParticleSystem particle;
+    
     public int damage = 1;
     public float speed;
 
@@ -16,6 +18,8 @@ public class Obstacle : MonoBehaviour
     {
         if(collision.CompareTag("Player")) //if the obstacle collides with a "Player" tag then deal damage and destroy self
         {
+            Instantiate(particle);
+            
             collision.GetComponent<CharacterMovement>().health -= damage;
             Debug.Log(collision.GetComponent<CharacterMovement>().health);
             Destroy(gameObject);

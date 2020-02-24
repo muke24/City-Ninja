@@ -5,11 +5,15 @@ using System;
 
 public class CharacterMovement : MonoBehaviour
 {
+	public GameObject heart1;
+	public GameObject heart2;
+	public GameObject heart3;
+
 	public float speed;
 	public float jump;
 	public float checkRadius;
 	public int doubleJumpValue;
-	public int health = 2;
+	public int health = 3;
 	public Transform groundCheck;
 	public LayerMask whatIsGround;
 	public Animator anim;
@@ -56,7 +60,32 @@ public class CharacterMovement : MonoBehaviour
 			rb.AddForce(new Vector2(rb.velocity.x, jump));
 		}
 
-
+		#region Health Hearts
+		if (health == 3)
+		{
+			heart3.SetActive(true);
+			heart2.SetActive(true);
+			heart1.SetActive(true);
+		}
+		if (health == 2)
+		{
+			heart3.SetActive(false);
+			heart2.SetActive(true);
+			heart1.SetActive(true);
+		}
+		if (health == 1)
+		{
+			heart3.SetActive(false);
+			heart2.SetActive(false);
+			heart1.SetActive(true);
+		}
+		if (health == 0)
+		{
+			heart3.SetActive(false);
+			heart2.SetActive(false);
+			heart1.SetActive(false);
+		}
+		#endregion
 	}
 
 	void FixedUpdate()

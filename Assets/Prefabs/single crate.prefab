@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5548072975628170267}
   - component: {fileID: 2892900188567272565}
   - component: {fileID: -8566110602246597461}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: single crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,8 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 8903508336682851701, guid: 646fb65bceb62c74abd25af43bdad67a,
-    type: 3}
-  particleEffect: {fileID: 8903508336682851691, guid: 646fb65bceb62c74abd25af43bdad67a,
     type: 3}
   damage: 1
   speed: 5

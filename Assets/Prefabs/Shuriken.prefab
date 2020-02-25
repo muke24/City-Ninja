@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle: {fileID: 8903508336682851701, guid: 646fb65bceb62c74abd25af43bdad67a,
     type: 3}
+  obstacle: {fileID: 7518967909985766369}
   damage: 1
   speed: 5
 --- !u!60 &6712530373073225521

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -86,6 +87,11 @@ public class CharacterMovement : MonoBehaviour
 			heart1.SetActive(false);
 		}
 		#endregion
+
+        if(health < 1)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 	}
 
 	void FixedUpdate()

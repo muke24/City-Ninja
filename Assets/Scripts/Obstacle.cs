@@ -22,7 +22,7 @@ public class Obstacle : MonoBehaviour
 	{
 		if (collision.CompareTag("Player")) //if the obstacle collides with a "Player" tag then deal damage and destroy self
 		{
-
+            
 			Instantiate(particle, obstacle.transform.position, obstacle.transform.rotation);
 
 

@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
+    [SerializeField]
+    GameObject speedLines;
+
+
 	public GameObject heart1;
 	public GameObject heart2;
 	public GameObject heart3;
@@ -33,7 +37,25 @@ public class CharacterMovement : MonoBehaviour
 
 	void Update()
 	{
-		if (isGrounded == true)
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            transform.Translate(new Vector2(5f, 1.015f));
+            Instantiate(speedLines, transform.position, speedLines.transform.rotation);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            transform.Translate(new Vector2(-5f, 1.015f));
+            Instantiate(speedLines, transform.position, speedLines.transform.rotation);
+        }
+
+
+
+
+
+
+
+        if (isGrounded == true)
 		{
 			doubleJump = doubleJumpValue;
 			anim.Play("Running");
@@ -91,6 +113,14 @@ public class CharacterMovement : MonoBehaviour
         if(health < 1)
         {
             SceneManager.LoadScene("GameOver");
+            
+
+        }
+
+        if(health > 3)
+        {
+
+            health = 3;
         }
 	}
 

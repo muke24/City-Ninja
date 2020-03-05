@@ -21,5 +21,11 @@ public class ScorePerSecond : MonoBehaviour
     {
         scoreText.text = (int)scoreAmount + "";
         scoreAmount +=pointIncreaseBySecond * Time.deltaTime*2;
+
+        if(PlayerPrefs.GetFloat("Highscore") < scoreAmount)
+            PlayerPrefs.SetFloat("Highscore", scoreAmount);
+
     }
+
+   
 }
